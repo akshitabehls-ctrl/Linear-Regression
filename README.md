@@ -15,13 +15,13 @@ The notebook includes complete preprocessing, model derivation, parameter comput
 
 ---
 
-## 📖 Mathematical framework
+# 📖 Mathematical framework
 
 Linear regression models the target variable ( y ) as a linear function of predictor ( x ):
 
-[
+```math
 y = mx + b
-]
+```
 
 where:
 
@@ -30,28 +30,28 @@ where:
 
 The optimal parameters minimise the residual sum of squares:
 
-[
-\text{RSS}(m, b) = \sum_{i=1}^{n} (y_i - (mx_i + b))^2
-]
+```math
+RSS(m, b) = \sum_{i=1}^{n} (y_i - (mx_i + b))^2
+```
 
 Closed-form solutions for simple linear regression are computed as:
 
-[
+```math
 m = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}
-]
+```
 
-[
+```math
 b = \bar{y} - m\bar{x}
-]
+```
 
 Predictions follow:
 
-[
+```math
 \hat{y} = mx + b
-]
-
+```
 
 ---
+
 
 ## 🔬 Notebook workflow
 
