@@ -30,11 +30,11 @@ $$
 y = mx + b
 $$
 
-Where
-( y ) = target variable
-( x ) = predictor variable
-( m ) = slope coefficient
-( b ) = intercept term
+Where  
+$y$ = target variable  
+$x$ = predictor variable  
+$m$ = slope coefficient  
+$b$ = intercept term
 
 Closed form estimates are obtained using sample statistics:
 
@@ -46,9 +46,10 @@ $$
 b = \bar{y} - m\bar{x}
 $$
 
-Where
-$ \bar{x} $ = mean of predictor
-$ \bar{y} $ = mean of response
+Where  
+$\bar{x}$ = mean of predictor  
+$\bar{y}$ = mean of response
+
 
 ---
 
@@ -60,11 +61,11 @@ $$
 \hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n
 $$
 
-Where
-$ \hat{y} $ = predicted output
-$ x_1, x_2, ..., x_n $ = predictor variables
-$ \beta_0 $ = intercept
-$ \beta_1,...,\beta_n $ = feature coefficients
+Where  
+$\hat{y}$ = predicted output  
+$x_1, x_2, ..., x_n$ = predictor variables  
+$\beta_0$ = intercept  
+$\beta_1,...,\beta_n$ = feature coefficients
 
 Written in matrix form:
 
@@ -72,9 +73,9 @@ $$
 \hat{y} = X\beta
 $$
 
-Where
-$ X $ = feature matrix
-$ \beta $ = parameter vector
+Where  
+$X$ = feature matrix  
+$\beta$ = parameter vector
 
 Coefficient estimation follows the Normal Equation:
 
@@ -82,10 +83,11 @@ $$
 \beta = (X^{T}X)^{-1}X^{T}y
 $$
 
-Where
-$ X^{T} $ = transpose of ( X )
-$ (X^{T}X)^{-1} $ = matrix inverse
-$ y $ = target vector
+Where  
+$X^{T}$ = transpose of $X$  
+$(X^{T}X)^{-1}$ = matrix inverse  
+$y$ = target vector
+
 
 ---
 
