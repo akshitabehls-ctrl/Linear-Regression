@@ -28,19 +28,21 @@ This structure allows for progressive exploration, beginning with single variabl
 
 The relationship between predictor ( x ) and response ( y ) is modeled as:
 
-[
+$$
 y = mx + b
-]
+$$
+
 
 Closed-form estimates are obtained using sample statistics:
 
-[
-m = \frac{\sum(x - \bar{x})(y - \bar{y})}{\sum(x - \bar{x})^2}
-]
+$$
+m = \frac{\sum (x - \bar{x})(y - \bar{y})}{\sum (x - \bar{x})^2}
+$$
 
-[
+$$
 b = \bar{y} - m\bar{x}
-]
+$$
+
 
 ---
 
@@ -48,21 +50,21 @@ b = \bar{y} - m\bar{x}
 
 For multiple predictors, the model generalises to:
 
-[
-\hat{y} = \beta_0 + \beta_1x_1 + \beta_2x_2 + \dots + \beta_nx_n
-]
+$$
+\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n
+$$
 
 Written in matrix form:
 
-[
+$$
 \hat{y} = X\beta
-]
+$$
 
 Coefficient estimation follows the **Normal Equation**:
 
-[
+$$
 \beta = (X^{T}X)^{-1}X^{T}y
-]
+$$
 
 The intercept term is incorporated by augmenting ( X ) with a column of ones.
 
