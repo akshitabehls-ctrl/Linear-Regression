@@ -1,168 +1,141 @@
-\documentclass[12pt]{article}
+# Linear Regression: Analytical Implementation and Model Validation
 
-\usepackage{amsmath}
-\usepackage{geometry}
-\usepackage{setspace}
-\usepackage{lmodern}
+This repository documents the analytical implementation of **simple** and **multiple** linear regression using Python and NumPy, developed without machine learning libraries. The project focuses on deriving regression parameters mathematically, implementing the complete modelling pipeline from first principles, and validating results against scikit-learn for correctness and convergence.
 
-\geometry{margin=1in}
-\setstretch{1.3}
+The work is divided across two notebooks:
 
-\begin{document}
+* **Simple Linear Regression (from scratch)**
+* **Multiple Linear Regression (from scratch + sklearn comparison)**
 
-\title{Linear Regression: Analytical Implementation and Model Validation}
-\author{}
-\date{}
-\maketitle
+This structure allows for progressive exploration, beginning with single variable estimation and extending into higher dimensional regression via matrix algebra.
 
-\section*{Overview}
+---
 
-This document describes the analytical implementation of simple and multiple linear regression using Python and NumPy, developed without machine learning libraries. The project focuses on deriving regression parameters mathematically, implementing the complete modelling pipeline from first principles, and validating results against scikit learn for correctness and convergence.
+## Project Objectives
 
-Two notebooks are included:
+1. Derive regression parameters analytically rather than algorithmically.
+2. Implement simple linear regression using statistical closed-form equations.
+3. Implement multiple linear regression using the Normal Equation.
+4. Integrate intercept computation through feature augmentation.
+5. Validate parameter estimates and predictions against scikit-learn.
+6. Compare model behaviour across univariate and multivariate settings.
 
-\begin{itemize}
-\item Simple Linear Regression from scratch
-\item Multiple Linear Regression from scratch with scikit learn comparison
-\end{itemize}
+---
 
-This structure supports progressive exploration beginning from single variable estimation and extending to higher dimensional regression using matrix algebra.
+## Mathematical Formulation
 
-\section*{Project Objectives}
+### Simple Linear Regression
 
-\begin{enumerate}
-\item Derive regression parameters analytically rather than algorithmically
-\item Implement simple linear regression using statistical closed form equations
-\item Implement multiple linear regression using the Normal Equation
-\item Integrate intercept computation through feature augmentation
-\item Validate parameter estimates and predictions against scikit learn
-\item Compare model behaviour across univariate and multivariate settings
-\end{enumerate}
+The relationship between predictor ( x ) and response ( y ) is modeled as:
 
-\section*{Mathematical Formulation}
-
-\subsection*{Simple Linear Regression}
-
-The relationship between predictor \(x\) and response \(y\) is modeled as:
-
-\[
+[
 y = mx + b
-\]
+]
 
-Closed form parameter estimation uses:
+Closed-form estimates are obtained using sample statistics:
 
-\[
+[
 m = \frac{\sum(x - \bar{x})(y - \bar{y})}{\sum(x - \bar{x})^2}
-\]
+]
 
-\[
+[
 b = \bar{y} - m\bar{x}
-\]
+]
 
-\subsection*{Multiple Linear Regression}
+---
+
+### Multiple Linear Regression
 
 For multiple predictors, the model generalises to:
 
-\[
-\hat{y} = \beta_{0} + \beta_{1}x_{1} + \beta_{2}x_{2} + \dots + \beta_{n}x_{n}
-\]
+[
+\hat{y} = \beta_0 + \beta_1x_1 + \beta_2x_2 + \dots + \beta_nx_n
+]
 
-Matrix representation:
+Written in matrix form:
 
-\[
+[
 \hat{y} = X\beta
-\]
+]
 
-Closed form solution using the Normal Equation:
+Coefficient estimation follows the **Normal Equation**:
 
-\[
+[
 \beta = (X^{T}X)^{-1}X^{T}y
-\]
+]
 
-The intercept term is incorporated by augmenting \(X\) with a column of ones.
+The intercept term is incorporated by augmenting ( X ) with a column of ones.
 
-\section*{Implementation Overview}
+---
 
-\subsection*{Notebook 1: Simple Linear Regression From Scratch}
+## Implementation Overview
 
-\begin{itemize}
-\item Univariate dataset selection
-\item Parameter estimation using summary statistics
-\item Prediction computation
-\item Regression line visualisation
-\item Manual error assessment
-\end{itemize}
+### Notebook 1: *Simple Linear Regression*
 
-\subsection*{Notebook 2: Multiple Linear Regression Scratch and scikit learn}
+* univariate dataset selection
+* parameter estimation using summary statistics
+* prediction generation
+* visualisation of regression line
+* manual error assessment
 
-\begin{itemize}
-\item Multivariate dataset construction
-\item Regression class implementation
-\item Parameter computation through matrix algebra
-\item scikit learn comparison for verification
-\item Prediction and performance evaluation
-\item Alignment of coefficients and intercepts
-\end{itemize}
+### Notebook 2: *Multiple Linear Regression*
 
-\section*{Validation and Cross Verification}
+* multivariate dataset formulation
+* regression class implementation
+* parameter computation via matrix algebra
+* scikit-learn regression fitting
+* prediction and performance comparison
+* alignment of coefficients and intercepts
 
-Both models were cross checked against scikit learn outputs to confirm:
+---
 
-\begin{itemize}
-\item Parameter equivalence
-\item Prediction consistency
-\item Error minimisation
-\item Numerical stability
-\end{itemize}
+## Validation and Cross-Verification
 
-This establishes correctness of the derived implementations and alignment with standard machine learning methodology.
+Both models were cross-checked against scikit-learn outputs to verify:
 
-\section*{Results}
+* parameter equivalence
+* prediction consistency
+* error minimisation
+* numerical stability
+
+---
+
+## Results
 
 The notebooks demonstrate:
 
-\begin{itemize}
-\item Accurate coefficient estimation for both models
-\item Stable prediction behaviour
-\item Agreement with scikit learn results
-\item Interpretable parameter structure
-\item Clear numerical and graphical diagnostics
-\end{itemize}
+* accurate coefficient estimation in both cases
+* stable prediction behaviour
+* convergence with sklearn outcomes
+* interpretable parameter structure
+* clear visual and numerical diagnostics
 
-Residual plots, predicted versus actual comparisons, and evaluation metrics confirm model reliability.
+Residual plots, predicted–actual comparisons, and evaluation metrics reinforce regression reliability.
 
-\section*{Requirements}
+---
 
-Python  
-NumPy  
-Pandas  
-Matplotlib  
-scikit learn  
+## Requirements
 
-Example installation:
+```
+Python
+NumPy
+Pandas
+Matplotlib
+scikit-learn (for comparison)
+```
 
-\begin{verbatim}
+Installation:
+
+```bash
 pip install numpy pandas matplotlib scikit-learn
-\end{verbatim}
+```
 
-\section*{Repository Structure}
+---
 
-\begin{verbatim}
+## Repository Structure
+
+```
 simple-linear-regression-from-scratch.ipynb
 multiple-linear-regression-scratch-sklearn.ipynb
 README.md
-\end{verbatim}
-
-\section*{Further Extensions}
-
-Possible enhancements include:
-
-\begin{itemize}
-\item Formal research structure with abstract, methodology, results, and discussion
-\item Integration of numerical outcomes within the document
-\item Dataset description and feature justification
-\item Equation referencing and annotation
-\item Academic references and citations
-\end{itemize}
-
-\end{document}
+```
