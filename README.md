@@ -47,8 +47,8 @@ b = \bar{y} - m\bar{x}
 $$
 
 Where
-( \bar{x} ) = mean of predictor
-( \bar{y} ) = mean of response
+$ \bar{x} $ = mean of predictor
+$ \bar{y} $ = mean of response
 
 ---
 
@@ -61,10 +61,10 @@ $$
 $$
 
 Where
-( \hat{y} ) = predicted output
-( x_1, x_2, ..., x_n ) = predictor variables
-( \beta_0 ) = intercept
-( \beta_1,...,\beta_n ) = feature coefficients
+$ \hat{y} $ = predicted output
+$ x_1, x_2, ..., x_n $ = predictor variables
+$ \beta_0 $ = intercept
+$ \beta_1,...,\beta_n $ = feature coefficients
 
 Written in matrix form:
 
@@ -73,8 +73,8 @@ $$
 $$
 
 Where
-( X ) = feature matrix
-( \beta ) = parameter vector
+$ X $ = feature matrix
+$ \beta $ = parameter vector
 
 Coefficient estimation follows the Normal Equation:
 
@@ -83,9 +83,9 @@ $$
 $$
 
 Where
-( X^{T} ) = transpose of ( X )
-( (X^{T}X)^{-1} ) = matrix inverse
-( y ) = target vector
+$ X^{T} $ = transpose of ( X )
+$ (X^{T}X)^{-1} $ = matrix inverse
+$ y $ = target vector
 
 ---
 
